@@ -9,8 +9,8 @@
   + Она должна находиться в папке **helpers**
   + У неё должны быть следующие методы: **get**, **set**, **delete**
   + Сделать так, чтобы эти методы можно было вызывать при помощи `yield`
-  + Для реализации данной задачи можно использовать обещания ((Q)[https://github.com/kriskowal/q]) или функции (в формате, который поддерживает (co)[https://github.com/tj/co])
-  + Конфиги для подключения к `memcached` необходимо получать при помощи модуля (config)[https://github.com/lorenwest/node-config]
+  + Для реализации данной задачи можно использовать обещания ([Q](https://github.com/kriskowal/q)) или функции (в формате, который поддерживает [co](https://github.com/tj/co])
+  + Конфиги для подключения к `memcached` необходимо получать при помощи модуля [config](https://github.com/lorenwest/node-config)
 - Создать новый контроллер `memcachedController`
   + Реализовать в нем методы: **getAction**, **postAction** и **deleteAction**, которые будут получать, добавлять и удалять данные в `memcached`, соответственно
   + Если в **postAction** удалось добавить данные в `memcached` - возвращать статус **201 Created**. В противном случае - **400 Bad Request**
@@ -19,6 +19,6 @@
   
 ## Полезные ссылки ##
 
-1. Консольные команды для работы с (memcached)[http://dev.mysql.com/doc/mysql-ha-scalability/en/ha-memcached-interfaces-libmemcached-utilities.html]
+1. Консольные команды для работы с [memcached](http://dev.mysql.com/doc/mysql-ha-scalability/en/ha-memcached-interfaces-libmemcached-utilities.html)
 
 

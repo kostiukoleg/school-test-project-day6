@@ -1,9 +1,9 @@
 /**
  * Created by okostiuk on 23.03.15.
  */
-var memcached = require("memcached"),
+var memcached = require("mc"),
     config = require("config"),
-    client = redis.createClient(
+    client = memcached.Client(
         config.memcached.port,
         config.memcached.host,
         {}

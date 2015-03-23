@@ -16,6 +16,8 @@
     "koa-bodyparser": "*",
     "koa-render": "*",
     "koa-router": "*",
+    "mc": "^1.0.6",
+    "memcached": "^2.1.0",
     "q": "^1.2.0",
     "redis": "^0.12.1"
   },

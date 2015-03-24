@@ -1,10 +1,11 @@
 var memcached = require("memcached"),
     config = require("config"),
-    client = new memcached('127.0.0.1:11211'),
-/*client = memcached.connect( '127.0.0.1:11211', function( err, conn ){
-    if( err ) throw new Error( err );
-    console.log( conn.server );
-});*/
+    client = new memcached(
+        config.memcached.port,
+        config.memcached.host,
+        {}
+    ),
+
     Q = require("q");
 
 /**

@@ -1,13 +1,10 @@
-/**
- * Created by okostiuk on 23.03.15.
- */
-var memcached = require("mc"),
+var memcached = require("memcached"),
     config = require("config"),
-    client = memcached.Client(
-        config.memcached.port,
-        config.memcached.host,
-        {}
-    ),
+    client = new memcached('127.0.0.1:11211'),
+/*client = memcached.connect( '127.0.0.1:11211', function( err, conn ){
+    if( err ) throw new Error( err );
+    console.log( conn.server );
+});*/
     Q = require("q");
 
 /**
@@ -61,17 +58,12 @@ module.exports = {
     set: function (key, value, ttl) {
         var deferred = Q.defer();
 
-        client.set(key, value, function (err, result) {
+        client.set(key, value,ttl, function (err, result) {
+            console.log(err);
             if (err) {
                 deferred.reject(err);
             } else {
-                client.expire(key, ttl, function (err, result) {
-                    if (err) {
-                        deferred.reject(err);
-                    } else {
-                        deferred.resolve(result);
-                    }
-                });
+                deferred.resolve(result);
             }
         });
 

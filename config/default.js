@@ -11,7 +11,6 @@ module.exports = {
         host: "127.0.0.1"
     },
     memcached: {
-        port: 11211,
-        host: "127.0.0.1"
+        host: "127.0.0.1:11211"
     }
 };

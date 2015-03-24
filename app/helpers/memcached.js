@@ -1,7 +1,6 @@
 var memcached = require("memcached"),
     config = require("config"),
     client = new memcached(
-        config.memcached.port,
         config.memcached.host,
         {}
     ),
